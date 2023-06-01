@@ -1,0 +1,19 @@
+{
+  "name": "linkedlist",
+  "version": "1.0.0",
+  "description": "algs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adithya-why/LinkedList.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adithya-why/LinkedList/issues"
+  },
+  "homepage": "https://github.com/Adithya-why/LinkedList#readme"
+}
