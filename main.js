@@ -98,6 +98,33 @@ const linkedList = function(){
     }
 
 
+    const find = function(val){
+        let cont = false;
+        let ind = null;
+        for(let j=0;j<size;j++){
+            let temp = at(j);
+            if(temp.value == val){
+                cont = true;
+                ind = j;
+            }
+        }
+        return {cont,ind};
+    }
+
+
+
+    const toString = function(){
+        let str = "";
+        for(let k=0;k<size;k++){
+            let temp = at(k);
+            str+=temp.value;
+            str+=" -> ";
+        }
+        str+=null;
+
+        return str;
+
+    }
 
 
 
@@ -106,7 +133,7 @@ const linkedList = function(){
 
 
 
-    return {create,display,append,prepend,sizeShow,headShow,tailShow,at,pop,contains}
+    return {create,display,append,prepend,sizeShow,headShow,tailShow,at,pop,contains,find,toString}
 }
 
 
@@ -117,5 +144,5 @@ x.append("C");
 x.append("D");
 x.append("E");
 x.prepend("aaahahaha");
+console.log(x.toString());
 
-x.display();
