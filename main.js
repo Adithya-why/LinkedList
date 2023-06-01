@@ -8,6 +8,8 @@ const node = function(value=null,nextNode=null){
 
 const linkedList = function(){
     let head = null;
+    let tail = null;
+    let size= 0;
 
     const display = function(){
         console.log(head);
@@ -15,16 +17,56 @@ const linkedList = function(){
 
     const create = function(value){
         head = node(value);
+        //tail = head;
+        size++;
     }
 
 
     const append = function(value){
-        head.nextNode = node(value);
+        console.log(tail);
+        if(tail!==null){
+        tail.nextNode = node(value);
+        tail = tail.nextNode;
+        size++;
+        }
+
+        else{
+            head.nextNode = node(value);
+            tail = head.nextNode;
+            size++;
+        }
     }
 
     const prepend = function(value){
         const temp = node(value,head);
         head = temp;
+        size++;
+    }
+
+    const sizeShow = function(){
+        console.log(size);
+    }
+
+    const headShow = function(){
+        console.log(head);
+    }
+
+    const tailShow = function(){
+        console.log(tail);
+    }
+
+    const at = function(index){
+        let i = 0;
+        let temp = head;
+        while(temp.nextNode !== null){
+            if(i===index){
+                console.log(temp);
+            }
+            else{
+                i++;
+                temp = temp.nextNode;
+            }
+        }
     }
 
 
@@ -35,14 +77,15 @@ const linkedList = function(){
 
 
 
-    return {create,display,append,prepend}
+
+    return {create,display,append,prepend,sizeShow,headShow,tailShow,at}
 }
 
 
 let x = linkedList();
-x.create("aaaaaaa");
+x.create("A");
+x.append("B");
+x.append("C");
+//x.prepend("hahahaha");
 x.display();
-x.append("bbbbbbb");
-x.display();
-x.prepend("ooooooo");
-x.display();
+//x.at(2);
