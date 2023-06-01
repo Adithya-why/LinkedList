@@ -1,3 +1,7 @@
+"use strict"
+
+
+
 const node = function(value=null,nextNode=null){
     return {value,nextNode};
 }
@@ -23,7 +27,7 @@ const linkedList = function(){
 
 
     const append = function(value){
-        console.log(tail);
+        //console.log(tail);
         if(tail!==null){
         tail.nextNode = node(value);
         tail = tail.nextNode;
@@ -58,9 +62,10 @@ const linkedList = function(){
     const at = function(index){
         let i = 0;
         let temp = head;
-        while(temp.nextNode !== null){
+       while(i<=index){
             if(i===index){
                 console.log(temp);
+                i++;
             }
             else{
                 i++;
@@ -86,6 +91,9 @@ let x = linkedList();
 x.create("A");
 x.append("B");
 x.append("C");
-//x.prepend("hahahaha");
+x.prepend("A1");
+x.prepend("A2");
+x.append("D");
 x.display();
-//x.at(2);
+
+x.at(1);
