@@ -86,6 +86,16 @@ const linkedList = function(){
         
     }
 
+    const contains = function(val){
+        let cont = false;
+        for(let j=0;j<size;j++){
+            let temp = at(j);
+            if(temp.value == val){
+                cont = true;
+            }
+        }
+        return cont;
+    }
 
 
 
@@ -95,7 +105,8 @@ const linkedList = function(){
 
 
 
-    return {create,display,append,prepend,sizeShow,headShow,tailShow,at,pop}
+
+    return {create,display,append,prepend,sizeShow,headShow,tailShow,at,pop,contains}
 }
 
 
@@ -105,7 +116,6 @@ x.append("B");
 x.append("C");
 x.append("D");
 x.append("E");
+x.prepend("aaahahaha");
 
-x.pop();
-x.pop();
 x.display();
