@@ -64,14 +64,26 @@ const linkedList = function(){
         let temp = head;
        while(i<=index){
             if(i===index){
+
                 console.log(temp);
                 i++;
+                return temp;
             }
             else{
                 i++;
                 temp = temp.nextNode;
             }
         }
+    }
+
+
+
+    const pop = function(){
+        let newTail = at(size-2);
+        tail = newTail;
+        newTail.nextNode = null;
+        size--;
+        
     }
 
 
@@ -83,7 +95,7 @@ const linkedList = function(){
 
 
 
-    return {create,display,append,prepend,sizeShow,headShow,tailShow,at}
+    return {create,display,append,prepend,sizeShow,headShow,tailShow,at,pop}
 }
 
 
@@ -91,9 +103,9 @@ let x = linkedList();
 x.create("A");
 x.append("B");
 x.append("C");
-x.prepend("A1");
-x.prepend("A2");
 x.append("D");
-x.display();
+x.append("E");
 
-x.at(1);
+x.pop();
+x.pop();
+x.display();
